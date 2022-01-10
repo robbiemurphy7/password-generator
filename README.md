@@ -1,6 +1,7 @@
 # Password Generator
 
 ## Purpose
+Site offers the user the ability to randomly generate a password with various stipulations such as lowercase lettering, uppercase lettering, numeral values and special characters. Dialogue with user is conveyd in window prompts and password is generated within the "your secure password" box as well as the console.
 
 ## Built With
 * HTML
