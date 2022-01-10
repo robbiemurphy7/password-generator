@@ -4,11 +4,10 @@ const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const numbers = '0123456789';
 const symbols = '~`! @#$%^&*()_-+={[}]|';
 
-
 // #generate ELEMENT
 var generateBtn = document.querySelector('#generate');
 
-// Write password to the #password input
+// #password ELEMENT
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
@@ -20,22 +19,47 @@ function writePassword() {
 // EventListener
 generateBtn.addEventListener('click', writePassword);
 
-    function writePassword() {
-        var promptPasswordLength = window.prompt('Your password must be between 8 and 128 characters. Write a number of your choosing below that coincides with the aformentioned integer requirment.');
+var passwordCharacteristics = '';
 
-        //while (promptPasswordLength > 8 && > 128) {
-        //    var confirmNum = window.confirm('Please write a number between 8 and 128.');
-        //}
+function generatePassword() {
+    var promptPasswordLength = window.prompt('Your password must be between 8 and 128 characters. Write a number of your choosing below that coincides with the aformentioned integer requirment.');
+    // while NECESSITATES CONDITION TO BE TRUE + isNaN - Not-A-Number
+    while (isNaN(promptPasswordLength) || promptPasswordLength < 8  || promptPasswordLength > 128) promptPasswordLength = Number(window.prompt('Please write a number between 8 and 128')); {
 
-        var promptLowerCase = window.confirm('Should your password include lowercase letters?');
+    }
+    var promptLowerCase = window.prompt('Should your password include lowercase letters? Enter "YES" or "NO".');
+    if (promptLowerCase === 'no' || promptLowerCase === 'NO') {
+        var promptUpperCase;
+    }
+    var promptUpperCase = window.prompt('Should your password include uppercase letters? Enter "YES" or "NO".');
+    if (promptUpperCase === 'no' || promptUpperCase === 'NO') {
+        var promptNumeric;
+    }
+    var promptNumeric = window.prompt('Should your password include numbers? Enter "YES" or "NO".');
+    if (promptNumeric === 'no' || promptNumeric === 'NO') {
+        var promptSymbols;
+    }
+    var promptSymbols = window.prompt('Should your password include symbols? Enter "YES" or "NO".');
+    if (promptSymbols === 'no' || promptSymbols === 'NO') {
 
-        var promptUpperCase = window.confirm('Should your password include uppercase letters?');
-
-        var promptNumeric = window.confirm('Should your password include numbers?');
-
-        var promptSymbols = window.confirm('Should your password include symbols?');
+        var confirmSymbols = window.confirm('You must have at least one unique characteristic. Confirm.');
+    
     }
 
-    //function writePassword() {
-    //    var promptIntegerLength = window.confirm('Select ')
-    // }
+    if (promptLowerCase) passwordCharacteristics += lowerCase;
+
+    if (promptUpperCase) passwordCharacteristics += upperCase;
+
+    if (promptNumeric) passwordCharacteristics += numbers;
+
+    if (promptSymbols) passwordCharacteristics += symbols;
+
+    // parseInt() PARSES STRING ARGUMENT AND RETURNS AN INTEGER OF SPECIFIED RADIX
+    var password = '';
+        for (var i = 0; i < parseInt(promptPasswordLength); i++) {
+            var randomIndex = Math.floor(Math.random() * passwordCharacteristics.length);
+            password += passwordCharacteristics[randomIndex];
+        }
+
+    return password;
+    }
