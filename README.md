@@ -8,10 +8,10 @@
 * JAVASCRIPT
 
 ## Initial Landing Page View
-![Image](./Develop/images/1.png)
+![Image](./develop/images/1.png)
 
 ## Generate Password Button / User Dialogue Initiated
-![Image](./Develop/images/2.png)
+![Image](./develop/images/2.png)
 
 ## Website
 Link to live URL:
