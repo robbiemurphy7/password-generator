@@ -2,7 +2,7 @@
 const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const numbers = '0123456789';
-const symbols = '~`! @#$%^&*()_-+={[}]|';
+const symbols = '~`!@#$%^&*()_-+={[}]|';
 
 // #generate ELEMENT
 var generateBtn = document.querySelector('#generate');
@@ -24,19 +24,19 @@ var passwordCharacteristics = '';
 function generatePassword() {
     var promptPasswordLength = window.prompt('Your password must be between 8 and 128 characters. Write a number of your choosing below that coincides with the aformentioned integer requirment.');
     // while NECESSITATES CONDITION TO BE TRUE + isNaN - Not-A-Number
-    while (isNaN(promptPasswordLength) || promptPasswordLength < 8  || promptPasswordLength > 128) promptPasswordLength = Number(window.prompt('Please write a number between 8 and 128')); {
+    while (isNaN(promptPasswordLength) || promptPasswordLength < 8  || promptPasswordLength > 128) promptPasswordLength = Number(window.prompt('Please write a number between 8 and 128.')); {
 
     }
     var promptLowerCase = window.prompt('Should your password include lowercase letters? Enter "YES" or "NO".');
-    if (promptLowerCase === 'no' || promptLowerCase === 'NO') {
+    if (promptLowerCase === 'yes' || promptLowerCase === 'YES') {
         var promptUpperCase;
     }
     var promptUpperCase = window.prompt('Should your password include uppercase letters? Enter "YES" or "NO".');
-    if (promptUpperCase === 'no' || promptUpperCase === 'NO') {
+    if (promptUpperCase === 'yes' || promptUpperCase === 'YES') {
         var promptNumeric;
     }
     var promptNumeric = window.prompt('Should your password include numbers? Enter "YES" or "NO".');
-    if (promptNumeric === 'no' || promptNumeric === 'NO') {
+    if (promptNumeric === 'yes' || promptNumeric === 'YES') {
         var promptSymbols;
     }
     var promptSymbols = window.prompt('Should your password include symbols? Enter "YES" or "NO".');
