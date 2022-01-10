@@ -43,7 +43,7 @@ function generatePassword() {
     if (promptSymbols === 'no' || promptSymbols === 'NO') {
 
         var confirmSymbols = window.confirm('You must have at least one unique characteristic. Confirm.');
-    
+
     }
 
     if (promptLowerCase) passwordCharacteristics += lowerCase;
@@ -61,7 +61,7 @@ function generatePassword() {
             password += passwordCharacteristics[randomIndex];
         }
 
-        // CHECK CONSOLE FOR PASSWORD
+        // CONSOLE DISPLAYS PASSWORD GENERATED
         console.log(password);
 
     return password;
