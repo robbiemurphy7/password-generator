@@ -15,4 +15,4 @@ Site offers the user the ability to randomly generate a password with various st
 ![Image](./develop/images/2.png)
 
 ## Website
-Link to live URL:
+Link to live URL: https://robbiemurphy7.github.io/password-generator/
