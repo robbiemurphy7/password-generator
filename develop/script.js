@@ -23,8 +23,8 @@ var passwordCharacteristics = '';
 
 function generatePassword() {
     var promptPasswordLength = window.prompt('Your password must be between 8 and 128 characters. Write a number of your choosing below that coincides with the aformentioned integer requirment.');
-    // while NECESSITATES CONDITION TO BE TRUE + isNaN - Not-A-Number
-    while (isNaN(promptPasswordLength) || promptPasswordLength < 8  || promptPasswordLength > 128) promptPasswordLength = Number(window.prompt('Please write a number between 8 and 128.')); {
+    // while NECESSITATES CONDITION TO BE TRUE
+    while (promptPasswordLength < 8  || promptPasswordLength > 128) promptPasswordLength = Number(window.prompt('Please write a number between 8 and 128.')); {
 
     }
     var promptLowerCase = window.prompt('Should your password include lowercase letters? Enter "YES" or "NO".');
@@ -60,6 +60,9 @@ function generatePassword() {
             var randomIndex = Math.floor(Math.random() * passwordCharacteristics.length);
             password += passwordCharacteristics[randomIndex];
         }
+
+        // CHECK CONSOLE FOR PASSWORD
+        console.log(password);
 
     return password;
     }
